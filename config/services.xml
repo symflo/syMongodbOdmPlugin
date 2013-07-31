@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:acme_demo="http://www.example.com/symfony/schema/"
+    xsi:schemaLocation="http://www.example.com/symfony/schema/ http://www.example.com/symfony/schema/hello-1.0.xsd">
+
+    <parameters>
+        <parameter key="symflo.mongodbodm.configurator.class">Symflo\MongoDBODM\Configurator</parameter>
+        <parameter key="symflo.mongodbodm.connection.class">Symflo\MongoDBODM\Connection</parameter>
+        <parameter key="symflo.mongodbodm.odmnormalizer.class">Symflo\MongoDBODM\Normalizer\ODMNormalizer</parameter>
+        <parameter key="symflo.mongodbodm.collection.handler.class">Symflo\MongoDBODM\Document\CollectionHandler</parameter>
+        <parameter key="symflo.mongodbodm.document.manager.class">Symflo\MongoDBODM\DocumentManager</parameter>
+        <parameter key="symflo.mongodbodm.document.validator.class">Symflo\MongoDBODM\Validator\ValidatorDocument</parameter>
+
+        <!-- TYPES CLASS -->
+        <parameter key="symflo.mongodbodm.type.date.class">Symflo\MongoDBODM\Type\DateType</parameter>
+        <parameter key="symflo.mongodbodm.type.string.class">Symflo\MongoDBODM\Type\StringType</parameter>
+        <parameter key="symflo.mongodbodm.type.integer.class">Symflo\MongoDBODM\Type\IntegerType</parameter>
+        <parameter key="symflo.mongodbodm.type.pass.class">Symflo\MongoDBODM\Type\PassType</parameter>
+        <parameter key="symflo.mongodbodm.type.manualreference.class">Symflo\MongoDBODM\Type\ManualReferenceType</parameter>
+        <parameter key="symflo.mongodbodm.type.manualreferences.class">Symflo\MongoDBODM\Type\ManualReferencesType</parameter>
+        <parameter key="symflo.mongodbodm.type.collection.class">Symflo\MongoDBODM\Type\CollectionType</parameter>
+    </parameters>
+
+    <services>
+        <service id="symflo.mongodbodm.configurator" class="%symflo.mongodbodm.configurator.class%" scope="container" />
+
+        <service id="symflo.mongodbodm.connection" class="%symflo.mongodbodm.connection.class%" scope="container">
+            <argument type="service" id="symflo.mongodbodm.configurator" />
+        </service>
+
+        <service id="symflo.mongodbodm.odmnormalizer" class="%symflo.mongodbodm.odmnormalizer.class%" scope="container" />
+
+        <service id="symflo.mongodbodm.collection.handler" class="%symflo.mongodbodm.collection.handler.class%" scope="container">
+            <argument type="service" id="symflo.mongodbodm.odmnormalizer" />
+            <argument type="service" id="symflo.mongodbodm.configurator" />
+        </service>
+
+        <service id="symflo.mongodbodm.document.validator" class="%symflo.mongodbodm.document.validator.class%" scope="container">
+            <argument type="service" id="symflo.mongodbodm.configurator" />
+        </service>
+
+        <service id="symflo.mongodbodm.document.manager" class="%symflo.mongodbodm.document.manager.class%" scope="container">
+            <argument type="service" id="symflo.mongodbodm.connection" />
+            <argument type="service" id="symflo.mongodbodm.collection.handler" />
+            <argument type="service" id="symflo.mongodbodm.document.validator" />
+        </service>
+
+        <!-- TYPES -->
+        <service id="symflo.mongodbodm.type.date" class="%symflo.mongodbodm.type.date.class%" scope="container" />
+        <service id="symflo.mongodbodm.type.string" class="%symflo.mongodbodm.type.string.class%" scope="container" />
+        <service id="symflo.mongodbodm.type.integer" class="%symflo.mongodbodm.type.integer.class%" scope="container" />
+        <service id="symflo.mongodbodm.type.pass" class="%symflo.mongodbodm.type.pass.class%" scope="container" />
+        <service id="symflo.mongodbodm.type.manualreference" class="%symflo.mongodbodm.type.manualreference.class%" scope="container">
+            <argument type="service" id="symflo.mongodbodm.document.manager" />
+        </service>
+        <service id="symflo.mongodbodm.type.manualreferences" class="%symflo.mongodbodm.type.manualreferences.class%" scope="container">
+            <argument type="service" id="symflo.mongodbodm.document.manager" />
+        </service>
+        <service id="symflo.mongodbodm.type.collection" class="%symflo.mongodbodm.type.collection.class%" scope="container">
+            <argument type="service" id="symflo.mongodbodm.odmnormalizer" />
+        </service>
+    </services>
+
+</container>

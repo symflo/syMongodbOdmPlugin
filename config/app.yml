@@ -1,0 +1,16 @@
+all:
+  syMongodbOdmPlugin:
+    databases:
+      default:
+        host: 127.0.0.1
+        user: ''
+        password: ''
+        database: local
+    types:
+      date: symflo.mongodbodm.type.date
+      string: symflo.mongodbodm.type.string
+      integer: symflo.mongodbodm.type.integer
+      pass: symflo.mongodbodm.type.pass
+      manualreference: symflo.mongodbodm.type.manualreference
+      manualreferences: symflo.mongodbodm.type.manualreferences
+      collection: symflo.mongodbodm.type.collection
