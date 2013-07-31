@@ -1,6 +1,6 @@
 # syMongodbOdmPlugin
 
-use [MongoDB ODM for PHP](https://github.com/symflo/mongodb-odm) for SF1. IN PROGRESS.
+use [MongoDB ODM for PHP](https://github.com/symflo/mongodb-odm) for SF1.
 
 ## Requirements
 
@@ -53,7 +53,7 @@ syDependencyInjectionPlugin:
     extensions:
       - SyMongodbOdmExtension
       ...
-```
+``
 
 ## Configuration
 
