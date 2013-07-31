@@ -53,7 +53,7 @@ syDependencyInjectionPlugin:
     extensions:
       - SyMongodbOdmExtension
       ...
-``
+```
 
 ## Configuration
 
