@@ -88,3 +88,10 @@ public function executeYourAction(sfWebRequest $request)
 //...
 ?>
 ```
+
+## Ensure Index Task
+
+Prepare document indexes like [MongoDB ODM for PHP](https://github.com/symflo/mongodb-odm#ensureindex). Then run task:
+```shell
+php symfony sy:syMongodbOdmEnsureIndex
+```
