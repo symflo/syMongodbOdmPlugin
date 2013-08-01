@@ -11,6 +11,7 @@
         <parameter key="symflo.mongodbodm.collection.handler.class">Symflo\MongoDBODM\Document\CollectionHandler</parameter>
         <parameter key="symflo.mongodbodm.document.manager.class">Symflo\MongoDBODM\DocumentManager</parameter>
         <parameter key="symflo.mongodbodm.document.validator.class">Symflo\MongoDBODM\Validator\ValidatorDocument</parameter>
+        <parameter key="symflo.mongodbodm.ensureindexer.class">Symflo\MongoDBODM\EnsureIndexer</parameter>
 
         <!-- TYPES CLASS -->
         <parameter key="symflo.mongodbodm.type.date.class">Symflo\MongoDBODM\Type\DateType</parameter>
@@ -44,6 +45,11 @@
             <argument type="service" id="symflo.mongodbodm.connection" />
             <argument type="service" id="symflo.mongodbodm.collection.handler" />
             <argument type="service" id="symflo.mongodbodm.document.validator" />
+        </service>
+
+        <service id="symflo.mongodbodm.ensureindexer" class="%symflo.mongodbodm.ensureindexer.class%" scope="container">
+            <argument type="service" id="symflo.mongodbodm.document.manager" />
+            <argument type="service" id="symflo.mongodbodm.configurator" />
         </service>
 
         <!-- TYPES -->
