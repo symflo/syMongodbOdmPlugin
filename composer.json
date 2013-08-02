@@ -11,6 +11,7 @@
     ],
     "require": {
         "composer/installers": "*",
-        "mongodb-odm": "dev-master"
+        "symflo/mongodb-odm": "dev-master",
+        "symflo/sy-dependency-injection-plugin": "dev-master"
     }
 }
