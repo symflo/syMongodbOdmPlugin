@@ -1,0 +1,16 @@
+{
+    "name": "symflo/syMongodbOdmplugin",
+    "type": "symfony1-plugin",
+    "description": "symfony 1.x plugin for symflo/mongodb-odm.",
+    "keywords": ["symfony", "mongodb", "odm", "database", "persistence"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "symflo"
+        }
+    ],
+    "require": {
+        "composer/installers": "*",
+        "mongodb-odm": "dev-master"
+    }
+}
