@@ -1,5 +1,5 @@
 {
-    "name": "symflo/syMongodbOdmplugin",
+    "name": "symflo/sy-mongodb-odm-plugin",
     "type": "symfony1-plugin",
     "description": "symfony 1.x plugin for symflo/mongodb-odm.",
     "keywords": ["symfony", "mongodb", "odm", "database", "persistence"],
