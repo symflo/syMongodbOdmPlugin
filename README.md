@@ -23,7 +23,7 @@ Add Symfony DependencyInjection Component in your `composer.json`
 ```shell
     "require": {
         ...
-        "symflo/mongodb-odm": "dev-master",
+        "symflo/sy-mongodb-odm-plugin": "dev-master"
         ...
     },
 ```
@@ -69,8 +69,13 @@ all:
         password: ''
         database: database
     documents:
-      user: 'Your\Namespace\Document\UserDocument'
-      message: 'Your\Namespace\Document\MessageDocument'
+      user: 
+        class: 'MongoUserDocument'
+        collectionName: 'users'
+        collectionClass: 'MongoUserCollection'
+      message: 
+        class: 'MongoMessageDocument'
+        collectionName: 'messages'
 ```
 
 ## In your Action
