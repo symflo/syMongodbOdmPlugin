@@ -17,6 +17,7 @@
         <parameter key="symflo.mongodbodm.type.date.class">Symflo\MongoDBODM\Type\DateType</parameter>
         <parameter key="symflo.mongodbodm.type.string.class">Symflo\MongoDBODM\Type\StringType</parameter>
         <parameter key="symflo.mongodbodm.type.integer.class">Symflo\MongoDBODM\Type\IntegerType</parameter>
+        <parameter key="symflo.mongodbodm.type.boolean.class">Symflo\MongoDBODM\Type\BooleanType</parameter>
         <parameter key="symflo.mongodbodm.type.pass.class">Symflo\MongoDBODM\Type\PassType</parameter>
         <parameter key="symflo.mongodbodm.type.manualreference.class">Symflo\MongoDBODM\Type\ManualReferenceType</parameter>
         <parameter key="symflo.mongodbodm.type.manualreferences.class">Symflo\MongoDBODM\Type\ManualReferencesType</parameter>
@@ -56,6 +57,7 @@
         <service id="symflo.mongodbodm.type.date" class="%symflo.mongodbodm.type.date.class%" scope="container" />
         <service id="symflo.mongodbodm.type.string" class="%symflo.mongodbodm.type.string.class%" scope="container" />
         <service id="symflo.mongodbodm.type.integer" class="%symflo.mongodbodm.type.integer.class%" scope="container" />
+        <service id="symflo.mongodbodm.type.boolean" class="%symflo.mongodbodm.type.boolean.class%" scope="container" />
         <service id="symflo.mongodbodm.type.pass" class="%symflo.mongodbodm.type.pass.class%" scope="container" />
         <service id="symflo.mongodbodm.type.manualreference" class="%symflo.mongodbodm.type.manualreference.class%" scope="container">
             <argument type="service" id="symflo.mongodbodm.document.manager" />
