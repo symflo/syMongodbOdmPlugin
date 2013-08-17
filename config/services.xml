@@ -21,7 +21,8 @@
         <parameter key="symflo.mongodbodm.type.pass.class">Symflo\MongoDBODM\Type\PassType</parameter>
         <parameter key="symflo.mongodbodm.type.manualreference.class">Symflo\MongoDBODM\Type\ManualReferenceType</parameter>
         <parameter key="symflo.mongodbodm.type.manualreferences.class">Symflo\MongoDBODM\Type\ManualReferencesType</parameter>
-        <parameter key="symflo.mongodbodm.type.collection.class">Symflo\MongoDBODM\Type\CollectionType</parameter>
+        <parameter key="symflo.mongodbodm.type.embeddedcollection.class">Symflo\MongoDBODM\Type\EmbeddedCollectionType</parameter>
+        <parameter key="symflo.mongodbodm.type.embeddedone.class">Symflo\MongoDBODM\Type\EmbeddedOneType</parameter>
     </parameters>
 
     <services>
@@ -65,7 +66,12 @@
         <service id="symflo.mongodbodm.type.manualreferences" class="%symflo.mongodbodm.type.manualreferences.class%" scope="container">
             <argument type="service" id="symflo.mongodbodm.document.manager" />
         </service>
-        <service id="symflo.mongodbodm.type.collection" class="%symflo.mongodbodm.type.collection.class%" scope="container">
+        <service id="symflo.mongodbodm.type.embeddedcollection" class="%symflo.mongodbodm.type.embeddedcollection.class%" scope="container">
+            <argument type="service" id="symflo.mongodbodm.configurator" />
+            <argument type="service" id="symflo.mongodbodm.odmnormalizer" />
+        </service>
+
+        <service id="symflo.mongodbodm.type.embeddedone" class="%symflo.mongodbodm.type.embeddedone.class%" scope="container">
             <argument type="service" id="symflo.mongodbodm.configurator" />
             <argument type="service" id="symflo.mongodbodm.odmnormalizer" />
         </service>
