@@ -13,4 +13,5 @@ all:
       pass: symflo.mongodbodm.type.pass
       manualreference: symflo.mongodbodm.type.manualreference
       manualreferences: symflo.mongodbodm.type.manualreferences
-      collection: symflo.mongodbodm.type.collection
+      embeddedcollection: symflo.mongodbodm.type.embeddedcollection
+      embeddedone: symflo.mongodbodm.type.embeddedone
