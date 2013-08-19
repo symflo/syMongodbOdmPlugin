@@ -11,7 +11,7 @@ all:
       string: symflo.mongodbodm.type.string
       integer: symflo.mongodbodm.type.integer
       pass: symflo.mongodbodm.type.pass
-      manualreference: symflo.mongodbodm.type.manualreference
-      manualreferences: symflo.mongodbodm.type.manualreferences
-      embeddedcollection: symflo.mongodbodm.type.embeddedcollection
-      embeddedone: symflo.mongodbodm.type.embeddedone
+      manualReference: symflo.mongodbodm.type.manualreference
+      manualReferences: symflo.mongodbodm.type.manualreferences
+      embeddedCollection: symflo.mongodbodm.type.embeddedcollection
+      embeddedOne: symflo.mongodbodm.type.embeddedone
